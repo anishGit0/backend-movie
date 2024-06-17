@@ -9,6 +9,10 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("MY app is here");
+})
+
 const moviesRouter = require('./routes/movie.js');
 const usersRouter = require('./routes/users.js');
 app.use('/movies', moviesRouter);
